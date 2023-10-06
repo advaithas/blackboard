@@ -11,6 +11,9 @@ const { addUser, getUser, removeUser } = require("./utils/users");
 
 const { PeerServer } = require("peer");
 
+const cors = require("cors");
+app.use(cors());
+
 const peerServer = PeerServer({
   port: port1,
   path: "/peer",
