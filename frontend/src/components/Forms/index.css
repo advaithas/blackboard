@@ -1,0 +1,19 @@
+.form-box {
+  height: 400px;
+}
+
+.create{
+  color: white;
+}
+
+.join{
+  color: white;
+}
+
+.createbox{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.joinbox{
+  background-color: rgba(0, 0, 0, 0.7);
+}
