@@ -12,9 +12,9 @@ const { addUser, getUser, removeUser } = require("./utils/users");
 const { PeerServer } = require("peer");
 
 const peerServer = PeerServer({
-  host: "https://blackboard-6a6z.onrender.com",
   port: port1,
   path: "/",
+  allow_discovery: true, // Allow clients to discover each other
 });
 
 // Set up WebSocket server
