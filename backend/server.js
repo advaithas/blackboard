@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 
 const port = process.env.PORT || 5000;
-const port1 = process.env.PORT1 || 5001;
 
 const server = require("http").createServer(app);
 const { Server } = require("socket.io");
@@ -10,12 +9,6 @@ const { Server } = require("socket.io");
 const { addUser, getUser, removeUser } = require("./utils/users");
 
 const { PeerServer } = require("peer");
-
-const peerServer = PeerServer({
-  port: port1,
-  path: "/",
-  allow_discovery: true, // Allow clients to discover each other
-});
 
 // Set up WebSocket server
 const io = new Server(server, {
