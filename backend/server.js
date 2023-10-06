@@ -14,6 +14,7 @@ const { PeerServer } = require("peer");
 const peerServer = PeerServer({
   port: port1,
   path: "/peer",
+  secure: true,
 });
 
 // Set up WebSocket server
