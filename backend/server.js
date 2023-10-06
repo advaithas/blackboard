@@ -1,9 +1,6 @@
 const express = require("express");
 const app = express();
 
-const port = process.env.PORT || 5000;
-const port1 = process.env.PORT1 || 443;
-
 const server = require("http").createServer(app);
 const { Server } = require("socket.io");
 
@@ -11,13 +8,10 @@ const { addUser, getUser, removeUser } = require("./utils/users");
 
 const { PeerServer } = require("peer");
 
-const cors = require("cors");
-app.use(cors());
-
 const peerServer = PeerServer({
-  port: port1,
-  path: "/peer",
-  secure: true,
+  host: "localhost",
+  port: 5001,
+  path: "/",
 });
 
 // Set up WebSocket server
@@ -26,7 +20,7 @@ const io = new Server(server, {
 });
 
 // routes
-app.get("/peer", (req, res) => {
+app.get("/", (req, res) => {
   res.send("This is mern realtime board sharing app");
 });
 
@@ -87,6 +81,8 @@ io.on("connection", (socket) => {
   });
 });
 
+const port = process.env.PORT || 5000;
+
 server.listen(port, () =>
-  console.log("server is running")
+  console.log("server is running on http://localhost:5000")
 );
