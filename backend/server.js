@@ -12,7 +12,7 @@ const { addUser, getUser, removeUser } = require("./utils/users");
 const { PeerServer } = require("peer");
 
 const peerServer = PeerServer({
-  host: "localhost",
+  host: "/blackboard-6a6z.onrender.com",
   port: port1,
   path: "/",
 });
